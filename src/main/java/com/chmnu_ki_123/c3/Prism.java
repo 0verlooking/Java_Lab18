@@ -1,10 +1,9 @@
 package com.chmnu_ki_123.c3;
 
 public class Prism {
-    private double sideLength; // Довжина сторони основи
-    private double height;     // Висота призми
+    private double sideLength;
+    private double height;
 
-    // Конструктор
     public Prism(double sideLength, double height) {
         if (sideLength <= 0 || height <= 0) {
             throw new IllegalArgumentException("Сторона і висота повинні бути більшими за нуль.");
@@ -13,19 +12,17 @@ public class Prism {
         this.height = height;
     }
 
-    // Метод для обчислення площі бічної поверхні
     public double getLateralSurfaceArea() {
-        double perimeter = 3 * sideLength; // Периметр трикутника в основі
-        return perimeter * height;        // Площа бічної поверхні
+        double perimeter = 3 * sideLength;
+        return perimeter * height;
     }
 
     // Метод для обчислення об'єму призми
     public double getVolume() {
-        double triangleArea = (Math.sqrt(3) / 4) * sideLength * sideLength; // Площа основи
-        return triangleArea * height;                                      // Об'єм призми
+        double triangleArea = (Math.sqrt(3) / 4) * sideLength * sideLength;
+        return triangleArea * height;
     }
 
-    // Геттери для сторони і висоти
     public double getSideLength() {
         return sideLength;
     }
@@ -34,7 +31,6 @@ public class Prism {
         return height;
     }
 
-    // Сеттери для сторони і висоти
     public void setSideLength(double sideLength) {
         if (sideLength <= 0) {
             throw new IllegalArgumentException("Сторона повинна бути більшою за нуль.");
@@ -50,7 +46,6 @@ public class Prism {
     }
 
     public static void main(String[] args) {
-        // Приклад використання
         Prism prism = new Prism(5, 10);
 
         System.out.println("Площа бічної поверхні: " + prism.getLateralSurfaceArea());
